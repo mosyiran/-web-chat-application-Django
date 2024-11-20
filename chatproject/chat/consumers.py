@@ -5,7 +5,8 @@ class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.accept()
         self.send('{"type":"accept", "status":"accepted"}')
-        print(self.scope)
+        print(self.scope.get("user"))
+        print(self.scope.get("session"))
 
     def receive(self,text_data):
         print(text_data)
