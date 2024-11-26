@@ -7,6 +7,7 @@ from django.views import View
 
 class Main(View):
     def get(self, request):
+        print(request.session.get('get_me_from_consumer'))
         return render(request=request, template_name="chat/main.html")
 
 
